@@ -29,4 +29,4 @@ jobs:
         git add README.md
         git commit -m "🤖 Automasi: Status garaj utama dikemas kini" || echo "Tiada perubahan untuk di-commit"
         git pull --rebase origin main || echo "Tiada perubahan di remote untuk di-rebase"
-        git push
+        git push origin main

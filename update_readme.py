@@ -9,7 +9,6 @@ def generate_dynamic_stats():
     masa_formatted = waktu_sekarang.strftime('%d-%m-%Y %I:%M %p (Waktu Malaysia)')
     jam = waktu_sekarang.hour
 
-    # Senarai misi rawak umum
     misi_umum = [
         "Merisik laluan kembara konvoi baru... 🗺️",
         "Tengah asah skill color grading CapCut... 🎞️",
@@ -19,7 +18,6 @@ def generate_dynamic_stats():
         "Kemas kini storan aset digital... 🚀"
     ]
     
-    # Sentuhan Pro: Misi bertukar mengikut waktu siang/malam
     if 6 <= jam < 18:
         misi_waktu = ["Ngopi sat layan Kopi O Charger pekat... ☕", "Tengah pening layan coding bawah sinaran matahari... ☀️"]
     else:
@@ -52,15 +50,15 @@ def update_readme():
         with open("README.md", "r", encoding="utf-8") as f:
             readme_content = f.read()
 
-        # MEMBAIKI REGEX PATTERN YANG KOSONG SEBELUM INI
-        pattern = r'()(.*?)()'
+        # FORMULA REGEX DIBAIKI SUPAYA BERFUNGSI
+        pattern = r'(<!--\s*START_GARAJ_STATS\s*-->)(.*?)(<!--\s*END_GARAJ_STATS\s*-->)'
         if re.search(pattern, readme_content, flags=re.IGNORECASE | re.DOTALL):
             new_readme = re.sub(pattern, rf'\g<1>\n{stats_baru}\n\g<3>', readme_content, flags=re.IGNORECASE | re.DOTALL)
             with open("README.md", "w", encoding="utf-8") as f:
                 f.write(new_readme)
-            print("✅ README berjaya dikemas kini dengan gaya pro!")
+            print("✅ README berjaya dikemas kini!")
         else:
-            print("⚠️ Penanda tidak dijumpai dalam README.md")
+            print("⚠️ Penanda <!-- START_GARAJ_STATS --> tidak dijumpai dalam README.md")
     except Exception as e:
         print(f"❌ Ralat: {e}")
 

@@ -13,15 +13,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    
     - uses: actions/setup-python@v5
       with:
         python-version: '3.10'
+        
     - run: pip install pytz
+    
     - run: python update_readme.py
+    
     - name: Simpan Perubahan
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action Bot"
         git add README.md
-        git commit -m "🤖 Automasi: Status garaj utama dikemas kini"
+        git commit -m "🤖 Automasi: Status garaj utama dikemas kini" || echo "Tiada perubahan untuk di-commit"
+        git pull --rebase origin main || echo "Tiada perubahan di remote untuk di-rebase"
         git push

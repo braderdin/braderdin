@@ -52,12 +52,15 @@ def update_readme():
         with open("README.md", "r", encoding="utf-8") as f:
             readme_content = f.read()
 
+        # MEMBAIKI REGEX PATTERN YANG KOSONG SEBELUM INI
         pattern = r'()(.*?)()'
         if re.search(pattern, readme_content, flags=re.IGNORECASE | re.DOTALL):
             new_readme = re.sub(pattern, rf'\g<1>\n{stats_baru}\n\g<3>', readme_content, flags=re.IGNORECASE | re.DOTALL)
             with open("README.md", "w", encoding="utf-8") as f:
                 f.write(new_readme)
             print("✅ README berjaya dikemas kini dengan gaya pro!")
+        else:
+            print("⚠️ Penanda tidak dijumpai dalam README.md")
     except Exception as e:
         print(f"❌ Ralat: {e}")
 

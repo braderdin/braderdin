@@ -26,8 +26,6 @@ Salam hormat! Saya hanyalah seorang peminat jalanan yang kini sedang gigih berta
   <img src="https://img.shields.io/badge/github%20actions-%232088FF.svg?style=for-the-badge&logo=githubactions&logoColor=white" />
 </p>
 
----
-
 <p align="center">
-  <img src="https://komarev.com/bordercloud/activity/github/braderdin.svg" />
+  <img src="https://komarev.com/bordercloud/activity/github/braderdin.svg" alt="Profile Views" />
 </p>

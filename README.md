@@ -12,18 +12,16 @@ Sama ada menyusun laluan kembara ke sempadan Thailand, menelaah sejarah tamadun 
 
 ### 🤖 STATUS GARAJ & RIDER (Live Update)
 <!-- START_GARAJ_STATS -->
-> 🗓️ **Kemas Kini Terakhir:** `28-06-2026 03:01 AM (Waktu Malaysia)`
-=======
-> 🗓️ **Kemas Kini Terakhir:** `28-06-2026 03:49 AM (Waktu Malaysia)`
->>>>>>> 7f280634be21c4354a5a1e63a750bd5d7550a3be
+
+> 🗓️ **Kemas Kini Terakhir:** `28-06-2026 03:54 AM (Waktu Malaysia)`
 >
-> 🚩 **Misi Semasa:** `Tengah asah skill color grading CapCut untuk footage kamera... 🎞️`
+> 🚩 **Misi Semasa:** `Menggali sejarah peradaban lama, dari empayar Rom ke Tanah Siam... 📜`
 
 | 📊 Indikator Profil | Tahap (%) | Bar Grafik |
 | :--- | :---: | :--- |
-<<<<<<< HEAD
-| ☕ **Stamina Fizikal (Caffeine Level)** | `76%` | `███████░░░` |
-| 🛣️ **Keterujaan Ride (Throttle Therapy)** | `86%` | `████████░░` |
+| ☕ **Stamina Fizikal (Caffeine Level)** | `75%` | `███████░░░` |
+| 🛣️ **Keterujaan Ride (Throttle Therapy)** | `95%` | `█████████░` |
+
 <!-- END_GARAJ_STATS -->
 
 ---

@@ -7,7 +7,7 @@ def generate_dynamic_stats():
     waktu_sekarang = datetime.now(tz_my)
     masa_formatted = waktu_sekarang.strftime('%d-%m-%Y %I:%M %p (Waktu Malaysia)')
     
-    # Koleksi misi garaj / status rawak hari ini daripada draf abang
+    # Koleksi 8 misi garaj asal daripada fail teks abang
     misi_hari_ini = [
         "Merisik laluan kembara konvoi baru ke utara sempadan... 🗺️",
         "Tengah asah skill color grading CapCut untuk footage kamera... 🎞️",
@@ -35,22 +35,22 @@ def generate_dynamic_stats():
 | 📊 Indikator Profil | Tahap (%) | Bar Grafik |
 | :--- | :---: | :--- |
 | ☕ **Stamina Fizikal (Caffeine Level)** | `{stamina}%` | `{buat_bar(stamina)}` |
-| 🛣️ **Keterujaan Ride (Throttle Therapy)** | `{mood_ride}%` | `{buat_bar(mood_ride)}` |
+| 🛡️ **Keterujaan Ride (Throttle Therapy)** | `{mood_ride}%` | `{buat_bar(mood_ride)}` |
 """
 
 def update_readme():
     print("🤖 Memulakan proses suntikan profil utama...")
     stats_baru = generate_dynamic_stats()
     
-    start_tag = "<!-- START_GARAJ_STATS -->"
-    end_tag = "<!-- END_GARAJ_STATS -->"
+    start_tag = ""
+    end_tag = ""
     
     try:
         with open("README.md", "r", encoding="utf-8") as f:
             readme_content = f.read()
 
         if start_tag in readme_content and end_tag in readme_content:
-            # Teknik Memecah Teks Gaya Pro (Bebas ralat regex)
+            # Kaedah pemecahan rentetan (string splitting) - Jauh lebih selamat berbanding regex biasa
             bahagian_atas = readme_content.split(start_tag)[0]
             bahagian_bawah = readme_content.split(end_tag)[1]
             
@@ -59,9 +59,11 @@ def update_readme():
             with open("README.md", "w", encoding="utf-8") as f:
                 f.write(new_readme)
             
-            print("✅ README berjaya dikemas kini tanpa ralat!")
+            tz_my = pytz.timezone('Asia/Kuala_Lumpur')
+            waktu_log = datetime.now(tz_my).strftime('%H:%M:%S')
+            print(f"✅ README berjaya dikemas kini pada {waktu_log}")
         else:
-            print("❌ Ralat: Tag penanda tidak dijumpai di dalam fail README.md")
+            print("❌ Ralat: Tag START_GARAJ_STATS tidak dijumpai di dalam fail README.md")
     except Exception as e:
         print(f"❌ Berlaku ralat semasa membaca/menulis fail: {e}")
 

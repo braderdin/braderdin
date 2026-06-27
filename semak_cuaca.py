@@ -4,7 +4,6 @@ from datetime import datetime
 import pytz
 
 def ambil_cuaca(nama_tempat, lat, lon):
-    # Menggunakan API Cuaca Open-Meteo (Percuma & Bebas Kunci API)
     url = f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=Asia%2FKuala_Lumpur"
     try:
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
@@ -16,7 +15,6 @@ def ambil_cuaca(nama_tempat, lat, lon):
         return None
 
 def tukar_kod_cuaca(code):
-    # Menukar kod data kepada indikator status rider yang santai
     if code == 0: 
         return "☀️ Cerah Benderang (Ngam sangat pulas throttle layan ride)"
     elif code in [1, 2, 3]: 
@@ -34,7 +32,6 @@ def main():
     tz_my = pytz.timezone('Asia/Kuala_Lumpur')
     masa_formatted = datetime.now(tz_my).strftime('%d-%m-%Y %I:%M %p (Waktu Malaysia)')
     
-    # Ambil data live daripada koordinat geografi sebenar
     cuaca_rawang = ambil_cuaca("Rawang", "3.3211", "101.5779")
     cuaca_hatyai = ambil_cuaca("Hatyai", "7.0084", "100.4747")
     
@@ -42,7 +39,6 @@ def main():
         print("❌ Gagal menjana log disebabkan ralat data API.")
         return
 
-    # Reka bentuk paparan visual widget dashboard yang kemas dan berstail pro
     md_content = f"""# 🌦️ Laporan Cuaca Live: Garaj & Laluan Kembara 🏍️
 
 > 🗓️ **Kemas Kini Terakhir:** `{masa_formatted}`  

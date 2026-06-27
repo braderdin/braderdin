@@ -7,25 +7,20 @@ def generate_dynamic_stats():
     tz_my = pytz.timezone('Asia/Kuala_Lumpur')
     waktu_sekarang = datetime.now(tz_my)
     masa_formatted = waktu_sekarang.strftime('%d-%m-%Y %I:%M %p (Waktu Malaysia)')
-    jam = waktu_sekarang.hour
-
-    misi_umum = [
-        "Merisik laluan kembara konvoi baru... 🗺️",
-        "Tengah asah skill color grading CapCut... 🎞️",
+    
+    # Koleksi misi garaj / status rawak hari ini daripada fail draf abang
+    misi_hari_ini = [
+        "Merisik laluan kembara konvoi baru ke utara sempadan... 🗺️",
+        "Tengah asah skill color grading CapCut untuk footage kamera... 🎞️",
+        "Ngopi sat layan Kopi O Charger pekat... ☕",
         "Berhempas-pulas cuba fahamkan logik skrip Python... 🧪",
-        "Menggali sejarah peradaban lama... 📜",
-        "Cuci dan kilatkan jentera di garaj... 🏍️",
-        "Kemas kini storan aset digital... 🚀"
+        "Menggali sejarah peradaban lama, dari empayar Rom ke Tanah Siam... 📜",
+        "Berehat di pit-stop sambil layan lore terbaru One Piece & Bleach... 🌸",
+        "Cuci dan kilatkan jentera di garaj sebelum ride hujung minggu... 🏍️",
+        "Kemas kini storan aset digital & gambar di Shutterstock... 🚀"
     ]
     
-    if 6 <= jam < 18:
-        misi_waktu = ["Ngopi sat layan Kopi O Charger pekat... ☕", "Tengah pening layan coding bawah sinaran matahari... ☀️"]
-    else:
-        misi_waktu = ["Berehat di pit-stop sambil layan anime... 🌸", "Layan ride santai layan angin malam... 🌙"]
-        
-    misi_hari_ini = misi_umum + misi_waktu
     status_pilihan = random.choice(misi_hari_ini)
-    
     stamina = random.randint(70, 100)
     mood_ride = random.randint(85, 100)
 
@@ -45,22 +40,26 @@ def generate_dynamic_stats():
 """
 
 def update_readme():
+    print("🤖 Memulakan proses suntikan profil utama...")
     stats_baru = generate_dynamic_stats()
     try:
         with open("README.md", "r", encoding="utf-8") as f:
             readme_content = f.read()
 
-        # FORMULA REGEX DIBAIKI SUPAYA BERFUNGSI
-        pattern = r'(<!--\s*START_GARAJ_STATS\s*-->)(.*?)(<!--\s*END_GARAJ_STATS\s*-->)'
+        # Formula regex kebal untuk menyuntik status secara automasi
+        pattern = r'()(.*?)()'
         if re.search(pattern, readme_content, flags=re.IGNORECASE | re.DOTALL):
             new_readme = re.sub(pattern, rf'\g<1>\n{stats_baru}\n\g<3>', readme_content, flags=re.IGNORECASE | re.DOTALL)
             with open("README.md", "w", encoding="utf-8") as f:
                 f.write(new_readme)
-            print("✅ README berjaya dikemas kini!")
+            
+            tz_my = pytz.timezone('Asia/Kuala_Lumpur')
+            waktu_log = datetime.now(tz_my).strftime('%d-%m-%Y %I:%M %p')
+            print(f"✅ README berjaya dikemas kini pada {waktu_log}")
         else:
-            print("⚠️ Penanda <!-- START_GARAJ_STATS --> tidak dijumpai dalam README.md")
+            print("❌ Ralat: Tag START_GARAJ_STATS tidak dijumpai di dalam fail README.md")
     except Exception as e:
-        print(f"❌ Ralat: {e}")
+        print(f"❌ Berlaku ralat semasa membaca/menulis fail: {e}")
 
 if __name__ == "__main__":
     update_readme()

@@ -1,7 +1,7 @@
 # 🌸 Selamat Datang ke Pangkalan Utama @BraderDin! 🏍️
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=FF5500&center=true&vCenter=true&width=700&lines=Ride+Jauh%2C+Layan+Kopi%2C+Hidup+Happy!+🌸;XMAX+250+%26+BMW+R1250RT+Rider+🛵;Lifelong+Learner+%26+Code+Explorer+🗺️" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=FF5500&center=true&vCenter=true&width=700&lines=Ride+Jauh%2C+Layan+Kopi%2C+Hidup+Happy!+%F0%9F%8C%B8;XMAX+250+%26+BMW+R1250RT+Rider+%F0%9F%8F%8D;Lifelong+Learner+%26+Code+Explorer+%F0%9F%A7%AD" alt="Typing SVG" />
 </p>
 
 ---
@@ -12,8 +12,6 @@ Salam hormat! Saya hanyalah seorang peminat jalanan yang kini sedang gigih berta
 ---
 
 ### 🤖 STATUS GARAJ & RIDER (Live Update)
-<!-- START_GARAJ_STATS -->
-
 > 🗓️ **Kemas Kini Terakhir:** `28-06-2026 03:01 AM (Waktu Malaysia)`
 >
 > 🚩 **Misi Semasa:** `Ngopi sat layan Kopi O Charger pekat... ☕`
@@ -22,8 +20,6 @@ Salam hormat! Saya hanyalah seorang peminat jalanan yang kini sedang gigih berta
 | :--- | :---: | :--- |
 | ☕ **Stamina Fizikal (Caffeine Level)** | `76%` | `███████░░░` |
 | 🛣️ **Keterujaan Ride (Throttle Therapy)** | `86%` | `████████░░` |
-
-<!-- END_GARAJ_STATS -->
 
 ---
 
@@ -36,5 +32,5 @@ Salam hormat! Saya hanyalah seorang peminat jalanan yang kini sedang gigih berta
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/bordercloud/activity/github/braderdin.svg" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=braderdin&color=ff5500&style=for-the-badge&label=PENGUNJUNG+GARAJ" alt="Profile Views" />
 </p>

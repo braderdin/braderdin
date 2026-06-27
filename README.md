@@ -13,7 +13,16 @@ Salam hormat! Saya hanyalah seorang peminat jalanan yang kini sedang gigih berta
 
 ### 🤖 STATUS GARAJ & RIDER (Live Update)
 <!-- START_GARAJ_STATS -->
-<!-- Ruangan ini akan diisi secara automatik oleh skrip Python abang -->
+
+> 🗓️ **Kemas Kini Terakhir:** `28-06-2026 03:01 AM (Waktu Malaysia)`
+>
+> 🚩 **Misi Semasa:** `Ngopi sat layan Kopi O Charger pekat... ☕`
+
+| 📊 Indikator Profil | Tahap (%) | Bar Grafik |
+| :--- | :---: | :--- |
+| ☕ **Stamina Fizikal (Caffeine Level)** | `76%` | `███████░░░` |
+| 🛣️ **Keterujaan Ride (Throttle Therapy)** | `86%` | `████████░░` |
+
 <!-- END_GARAJ_STATS -->
 
 ---

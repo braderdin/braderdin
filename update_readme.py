@@ -46,8 +46,8 @@ def update_readme():
         with open("README.md", "r", encoding="utf-8") as f:
             readme_content = f.read()
 
-        # Formula regex kebal untuk menyuntik status secara automasi
-        pattern = r'()(.*?)()'
+        # FORMULA REGEX DIBAIKI DENGAN BETUL KEMBALI
+        pattern = r'(<!--\s*START_GARAJ_STATS\s*-->)(.*?)(<!--\s*END_GARAJ_STATS\s*-->)'
         if re.search(pattern, readme_content, flags=re.IGNORECASE | re.DOTALL):
             new_readme = re.sub(pattern, rf'\g<1>\n{stats_baru}\n\g<3>', readme_content, flags=re.IGNORECASE | re.DOTALL)
             with open("README.md", "w", encoding="utf-8") as f:

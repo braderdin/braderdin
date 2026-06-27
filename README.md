@@ -14,6 +14,7 @@ Sama ada menyusun laluan kembara ke sempadan Thailand, menelaah sejarah tamadun 
 ---
 
 ### 🤖 STATUS GARAJ & RIDER (Live Update)
+<!-- START_GARAJ_STATS -->
 > 🗓️ **Kemas Kini Terakhir:** `28-06-2026 03:01 AM (Waktu Malaysia)`
 >
 > 🚩 **Misi Semasa:** `Ngopi sat layan Kopi O Charger pekat... ☕`
@@ -22,6 +23,8 @@ Sama ada menyusun laluan kembara ke sempadan Thailand, menelaah sejarah tamadun 
 | :--- | :---: | :--- |
 | ☕ **Stamina Fizikal (Caffeine Level)** | `76%` | `███████░░░` |
 | 🛣️ **Keterujaan Ride (Throttle Therapy)** | `86%` | `████████░░` |
+<!-- END_GARAJ_STATS -->
+
 ---
 
 ### 🛡️ Senjata Koding & Kreatif (Tech Stack)

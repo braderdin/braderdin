@@ -2,12 +2,11 @@ name: 🤖 Automasi Profil Utama
 
 on:
   schedule:
-    # Jadual Automasi: Berjalan secara automatik setiap hari pada jam 8:00 Pagi Waktu Malaysia (00:00 UTC)
+    # Jadual Automasi: Berjalan secara automatik pada jam 8:00 Pagi Waktu Malaysia (00:00 UTC)
     - cron: '0 0 * * *'
   workflow_dispatch: 
-    # Arahan Manual: Membolehkan abang tekan butang 'Run workflow' secara manual di GitHub Actions
+    # Arahan Manual: Membolehkan abang menekan butang 'Run workflow' secara manual
 
-# Kebenaran Sistem (Permissions): WAJIB ADA! Beri lesen kepada robot untuk menulis dan menyimpan (push) fail
 permissions:
   contents: write
 

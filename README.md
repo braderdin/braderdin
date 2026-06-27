@@ -1,7 +1,7 @@
 # 🌸 Selamat Datang ke Pangkalan Utama @BraderDin! 🏍️
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=23&pause=1000&color=FF5500&center=true&vCenter=true&width=750&lines=Ride+Jauh%2C+Layan+Kopi%2C+Hidup+Happy!+%F0%9F%8C%B8;XMAX+250+%26+BMW+R1250RT+Rider+%F0%9F%8F%8D;Lifelong+Learner+%26+Code+Explorer+%F0%9F%A7%AD" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=23&pause=1000&color=FF5500&center=true&vCenter=true&width=750&lines=Ride+Jauh%2C+Layan+Kopi%2C+Hidup+Happy!+%F0%9F%8C%B8;XMAX+250+%26+ADV+160+Rider+%F0%9F%8F%8D;Lifelong+Learner+%26+Code+Explorer+%F0%9F%A7%AD" alt="Typing SVG" />
 </p>
 
 ---

@@ -45,8 +45,8 @@ def update_readme():
         with open("README.md", "r", encoding="utf-8") as f:
             readme_content = f.read()
 
-        # Gunakan Regex kebal untuk elak ralat tag hilang
-        pattern = r'()(.*?)()'
+        # PEMBAIKAN: Masukkan tag rahsia yang betul ke dalam Regex
+        pattern = r'(<!--\s*START_GARAJ_STATS\s*-->)(.*?)(<!--\s*END_GARAJ_STATS\s*-->)'
         
         if re.search(pattern, readme_content, flags=re.IGNORECASE | re.DOTALL):
             new_readme = re.sub(pattern, rf'\g<1>\n{stats_baru}\n\g<3>', readme_content, flags=re.IGNORECASE | re.DOTALL)
@@ -55,11 +55,10 @@ def update_readme():
                 f.write(new_readme)
             print(f"✅ README berjaya dikemas kini pada {datetime.now().strftime('%H:%M:%S')}")
         else:
-            print("❌ Ralat: Tag START_GARAJ_STATS tidak dijumpai di dalam fail README.md")
+            print("❌ Ralat: Tag START_GARAJ_STATS tidak dijumpai dalam README.md")
             
     except Exception as e:
         print(f"❌ Berlaku ralat semasa membaca/menulis fail: {e}")
 
 if __name__ == "__main__":
-    print("🤖 Memulakan proses suntikan profil utama...")
     update_readme()

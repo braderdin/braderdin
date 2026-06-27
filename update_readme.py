@@ -4,9 +4,11 @@ from datetime import datetime
 import pytz
 
 def generate_dynamic_stats():
+    # Tetapkan zon masa Malaysia
     tz_my = pytz.timezone('Asia/Kuala_Lumpur')
     masa_sekarang = datetime.now(tz_my).strftime('%d-%m-%Y %I:%M %p')
 
+    # Senarai status/misi rider
     misi_hari_ini = [
         "Merisik laluan kembara konvoi baru ke utara sempadan... 🗺️",
         "Tengah asah skill color grading CapCut untuk footage kamera... 🎞️",
@@ -22,6 +24,7 @@ def generate_dynamic_stats():
     stamina = random.randint(70, 100)
     mood_ride = random.randint(85, 100)
 
+    # Bina bar progress grafik
     def buat_bar(nilai):
         blok = int(nilai / 10)
         return "█" * blok + "░" * (10 - blok)
@@ -45,7 +48,7 @@ def update_readme():
         with open("README.md", "r", encoding="utf-8") as f:
             readme_content = f.read()
 
-        # PEMBAIKAN: Masukkan tag rahsia yang betul ke dalam Regex
+        # Regex mencari tag dengan ruang kosong (spasi) atau tanpa spasi
         pattern = r'(<!--\s*START_GARAJ_STATS\s*-->)(.*?)(<!--\s*END_GARAJ_STATS\s*-->)'
         
         if re.search(pattern, readme_content, flags=re.IGNORECASE | re.DOTALL):

@@ -1,29 +1,27 @@
+import re
 import random
 from datetime import datetime
 import pytz
 
 def generate_dynamic_stats():
-    # Tetapkan zon masa Malaysia (Kuala Lumpur)
     tz_my = pytz.timezone('Asia/Kuala_Lumpur')
     masa_sekarang = datetime.now(tz_my).strftime('%d-%m-%Y %I:%M %p')
 
-    # Senarai status/misi rider secara santai & rawak
     misi_hari_ini = [
-        "Memburu kabut pagi di sempadan Thailand... 🗺️",
-        "Tengah selenggara jentera kesayangan dekat garaj... 🔧",
+        "Merisik laluan kembara konvoi baru ke utara sempadan... 🗺️",
+        "Tengah asah skill color grading CapCut untuk footage kamera... 🎞️",
         "Ngopi sat layan Kopi O Charger pekat... ☕",
-        "Tengah pening kepala hadap skrip koding & bug Eleventy... 🧪",
-        "Dok usha laluan cross-border seterusnya dekat peta... 🏁",
-        "Berehat sambil layan anime One Piece & Bleach... 🌸",
-        "Tengah proses footage video 360 layan korner... 📷",
-        "Kemas kini storan gambar jentera dekat Imgur... 🚀"
+        "Berhempas-pulas cuba fahamkan logik skrip Python... 🧪",
+        "Menggali sejarah peradaban lama, dari empayar Rom ke Tanah Siam... 📜",
+        "Berehat di pit-stop sambil layan lore terbaru One Piece & Bleach... 🌸",
+        "Cuci dan kilatkan jentera di garaj sebelum ride hujung minggu... 🏍️",
+        "Kemas kini storan aset digital & gambar di Shutterstock... 🚀"
     ]
     
     status_pilihan = random.choice(misi_hari_ini)
-    stamina = random.randint(75, 100)
-    mood_ride = random.randint(80, 100)
+    stamina = random.randint(70, 100)
+    mood_ride = random.randint(85, 100)
 
-    # Bina bar progress grafik mudah
     def buat_bar(nilai):
         blok = int(nilai / 10)
         return "█" * blok + "░" * (10 - blok)
@@ -31,37 +29,37 @@ def generate_dynamic_stats():
     content = f"""
 > 🗓️ **Kemas Kini Terakhir:** `{masa_sekarang} (Waktu Malaysia)`
 >
-> 🚩 **Misi Hari Ini:** `{status_pilihan}`
+> 🚩 **Misi Semasa:** `{status_pilihan}`
 
-| Statistik Rider | Tahap Status | Bar Grafik |
+| 📊 Indikator Profil | Tahap (%) | Bar Grafik |
 | :--- | :---: | :--- |
-| ☕ **Stamina (Kopi O Charger)** | `{stamina}%` | `[{buat_bar(stamina)}]` |
-| 🗺️ **Mood Ride (Lapar Jalan Jauh)** | `{mood_ride}%` | `[{buat_bar(mood_ride)}]` |
+| ☕ **Stamina Fizikal (Caffeine Level)** | `{stamina}%` | `{buat_bar(stamina)}` |
+| 🛣️ **Keterujaan Ride (Throttle Therapy)** | `{mood_ride}%` | `{buat_bar(mood_ride)}` |
 """
     return content
 
 def update_readme():
     stats_baru = generate_dynamic_stats()
     
-    with open("README.md", "r", encoding="utf-8") as f:
-        readme_content = f.read()
+    try:
+        with open("README.md", "r", encoding="utf-8") as f:
+            readme_content = f.read()
 
-    # Cari kedudukan penanda (comment tags) dalam README
-    start_tag = "<!-- START_GARAJ_STATS -->"
-    end_tag = "<!-- END_GARAJ_STATS -->"
-    
-    start_idx = readme_content.find(start_tag) + len(start_tag)
-    end_idx = readme_content.find(end_tag)
-
-    if start_idx != -1 and end_idx != -1:
-        # Ganti kandungan lama di antara tag dengan statistik baru
-        new_readme = readme_content[:start_idx] + "\n" + stats_baru + "\n" + readme_content[end_idx:]
+        # Gunakan Regex kebal untuk elak ralat tag hilang
+        pattern = r'()(.*?)()'
         
-        with open("README.md", "w", encoding="utf-8") as f:
-            f.write(new_readme)
-        print("README berjaya dikemas kini, bang!")
-    else:
-        print("Ralat: Penanda tag tidak dijumpai dalam README.md")
+        if re.search(pattern, readme_content, flags=re.IGNORECASE | re.DOTALL):
+            new_readme = re.sub(pattern, rf'\g<1>\n{stats_baru}\n\g<3>', readme_content, flags=re.IGNORECASE | re.DOTALL)
+            
+            with open("README.md", "w", encoding="utf-8") as f:
+                f.write(new_readme)
+            print(f"✅ README berjaya dikemas kini pada {datetime.now().strftime('%H:%M:%S')}")
+        else:
+            print("❌ Ralat: Tag START_GARAJ_STATS tidak dijumpai di dalam fail README.md")
+            
+    except Exception as e:
+        print(f"❌ Berlaku ralat semasa membaca/menulis fail: {e}")
 
 if __name__ == "__main__":
+    print("🤖 Memulakan proses suntikan profil utama...")
     update_readme()
